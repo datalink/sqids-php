@@ -1,5 +1,11 @@
 # [Sqids PHP](https://sqids.org/php)
 
+---
+
+**This repo is forked from the original repo to provide PHP 7.4 support**
+
+---
+
 [![Latest Version](https://badgen.net/packagist/v/sqids/sqids)](https://packagist.org/packages/sqids/sqids)
 [![Build Status](https://badgen.net/github/checks/sqids/sqids-php?label=build&icon=github)](https://github.com/sqids/sqids-php/actions)
 [![Monthly Downloads](https://badgen.net/packagist/dm/sqids/sqids)](https://packagist.org/packages/sqids/sqids/stats)
