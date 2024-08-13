@@ -19,9 +19,9 @@ use RuntimeException;
 
 class Sqids implements SqidsInterface
 {
-    final public const DEFAULT_ALPHABET = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    final public const DEFAULT_MIN_LENGTH = 0;
-    final public const DEFAULT_BLOCKLIST = [
+    public const DEFAULT_ALPHABET = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    public const DEFAULT_MIN_LENGTH = 0;
+    public const DEFAULT_BLOCKLIST = [
         "0rgasm",
         "1d10t",
         "1d1ot",
@@ -585,14 +585,20 @@ class Sqids implements SqidsInterface
     ];
 
     protected MathInterface $math;
+    protected string $alphabet = self::DEFAULT_ALPHABET;
+    protected int $minLength = self::DEFAULT_MIN_LENGTH;
+    protected array $blocklist = self::DEFAULT_BLOCKLIST;
 
     /** @throws \InvalidArgumentException */
     public function __construct(
-        protected string $alphabet = self::DEFAULT_ALPHABET,
-        protected int $minLength = self::DEFAULT_MIN_LENGTH,
-        protected array $blocklist = self::DEFAULT_BLOCKLIST,
+        string $alphabet = self::DEFAULT_ALPHABET,
+        int $minLength = self::DEFAULT_MIN_LENGTH,
+        array $blocklist = self::DEFAULT_BLOCKLIST
     ) {
         $this->math = $this->getMathExtension();
+        $this->alphabet = $alphabet;
+        $this->minLength = $minLength;
+        $this->blocklist = $blocklist;
 
         if ($alphabet == '') {
             $alphabet = self::DEFAULT_ALPHABET;
