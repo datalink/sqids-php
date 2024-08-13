@@ -1,5 +1,5 @@
 {
-    "name": "datalink/sqids",
+    "name": "datalink/sqids-php",
     "description": "Generate short YouTube-looking IDs from numbers",
     "license": "MIT",
     "keywords": [
